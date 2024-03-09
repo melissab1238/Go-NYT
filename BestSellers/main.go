@@ -11,6 +11,30 @@ import (
 	"github.com/joho/godotenv"
 )
 
+type BookListFromAPI struct {
+	Status     string `json:"status"`
+	Copyright  string `json:"copyright"`
+	NumResults int    `json:"num_results"`
+	Results    []struct {
+		ListName            string `json:"list_name"`
+		DisplayName         string `json:"display_name"`
+		ListNameEncoded     string `json:"list_name_encoded"`
+		OldestPublishedDate string `json:"oldest_published_date"`
+		NewestPublishedDate string `json:"newest_published_date"`
+		Updated             string `json:"updated"`
+	} `json:"results"`
+}
+
+type BookList struct {
+	ID                  int
+	ListName            string
+	DisplayName         string
+	ListNameEncoded     string
+	OldestPublishedDate string
+	NewestPublishedDate string
+	Updated             string
+}
+
 type Book struct {
 	Rank               int       `json:"rank"`
 	RankLastWeek       int       `json:"rank_last_week"`
@@ -68,9 +92,24 @@ type NYTResponse struct {
 	} `json:"results"`
 }
 
-func main() {
-	fmt.Println("Hello, World!")
+func getJsonFromUrl(url string, api_key string) ([]byte, error) {
+	url = fmt.Sprintf("%s?api-key=%s", url, api_key)
+	resp, err := http.Get(url)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
 
+	result, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return nil, err
+	}
+	return result, nil
+}
+
+var listNames []string
+
+func main() {
 	// Load environment variables from .env file
 	err := godotenv.Load()
 	if err != nil {
@@ -79,32 +118,64 @@ func main() {
 	// Get API key for NYT books
 	api_key := os.Getenv("API_KEY")
 
-	// Fetch URL
-	url := fmt.Sprintf("https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=%s", api_key)
-	resp, err := http.Get(url)
+	// Get all list names
+	url := "https://api.nytimes.com/svc/books/v3/lists/names.json"
+	jsonData, err := getJsonFromUrl(url, api_key)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
+	// save to file
+	err = os.WriteFile("list_name.json", jsonData, 0644) // 0644 means read and write for owner and read for everyone else
+	if err != nil {
+		fmt.Println("Error writing file:", err)
+		return
+	}
 
-	// Read body of response
-	result, err := io.ReadAll(resp.Body)
+	// Assuming jsonData contains the JSON data as a byte slice
+	var bookListFromAPI BookListFromAPI
+	err = json.Unmarshal(jsonData, &bookListFromAPI)
 	if err != nil {
 		log.Fatal(err)
-	} else {
-		var response NYTResponse
-		err := json.Unmarshal(result, &response)
-		if err != nil {
-			log.Fatal(err)
-		}
-
-		// Access known status field
-		status := response.Status
-		fmt.Println("status:", status)
-
-		// Access the number of books in the list
-		numBooks := len(response.Results.Books)
-		fmt.Println("Number of books in the list:", numBooks)
 	}
-	fmt.Println("Done")
+	fmt.Println("Number of book lists:", bookListFromAPI.NumResults)
+
+	// Add IDs to each booklist result
+	var bookLists []BookList
+	for _, bookList := range bookListFromAPI.Results {
+		bookLists = append(bookLists,
+			BookList{ID: len(bookLists) + 1,
+				ListName:            bookList.ListName,
+				DisplayName:         bookList.DisplayName,
+				ListNameEncoded:     bookList.ListNameEncoded,
+				OldestPublishedDate: bookList.OldestPublishedDate,
+				NewestPublishedDate: bookList.NewestPublishedDate,
+				Updated:             bookList.Updated})
+	}
+
+	// Now bookListsWithID contains all the book lists with their IDs
+	// Output the bookListsWithID
+	for _, bookList := range bookLists {
+		fmt.Printf("%d %s\n", bookList.ID, bookList.ListName)
+	}
+
+	// Next section
+	// Get hardcover fiction lists
+	url = "https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json"
+	jsonData, err = getJsonFromUrl(url, api_key)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	var response NYTResponse
+	err = json.Unmarshal(jsonData, &response)
+	if err != nil {
+		log.Fatal(err)
+	}
+	// Access known status field
+	status := response.Status
+	fmt.Println("status:", status)
+	// Access the number of books in the list
+	numBooks := len(response.Results.Books)
+	fmt.Println("Number of books in the list:", numBooks)
+
 }
