@@ -5,9 +5,11 @@ Trying to brush up on my Go skills
 
 Future...
 
-- connect with a db
-- connect with an llm
-- maybe make a cli?
+- a CLI
+- connect with a db?
+- something AI
+- data analytics
+- tests ;p
 
 To run
 
@@ -17,3 +19,6 @@ To run
 4. `go run main.go`
 
 Or you can use a number of online go [playgrounds](https://play.golang.org/)
+
+To use
+`import "github.com/melissab1238/GO-NYT/BestSellers"`
