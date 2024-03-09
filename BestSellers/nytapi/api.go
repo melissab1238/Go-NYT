@@ -28,7 +28,7 @@ func FetchBookLists(apiKey string) ([]BookList, error) {
 	url := "https://api.nytimes.com/svc/books/v3/lists/names.json"
 	jsonData, err := getJsonFromUrl(url, apiKey)
 	if err != nil {
-		return nil, err
+	return nil, err
 	}
 
 	// Assuming jsonData contains the JSON data as a byte slice
