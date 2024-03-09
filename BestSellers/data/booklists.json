@@ -1,0 +1,533 @@
+[
+ {
+  "ID": 1,
+  "ListName": "Combined Print and E-Book Fiction",
+  "DisplayName": "Combined Print \u0026 E-Book Fiction",
+  "ListNameEncoded": "combined-print-and-e-book-fiction",
+  "OldestPublishedDate": "2011-02-13",
+  "NewestPublishedDate": "2024-03-17",
+  "Updated": "WEEKLY"
+ },
+ {
+  "ID": 2,
+  "ListName": "Combined Print and E-Book Nonfiction",
+  "DisplayName": "Combined Print \u0026 E-Book Nonfiction",
+  "ListNameEncoded": "combined-print-and-e-book-nonfiction",
+  "OldestPublishedDate": "2011-02-13",
+  "NewestPublishedDate": "2024-03-17",
+  "Updated": "WEEKLY"
+ },
+ {
+  "ID": 3,
+  "ListName": "Hardcover Fiction",
+  "DisplayName": "Hardcover Fiction",
+  "ListNameEncoded": "hardcover-fiction",
+  "OldestPublishedDate": "2008-06-08",
+  "NewestPublishedDate": "2024-03-17",
+  "Updated": "WEEKLY"
+ },
+ {
+  "ID": 4,
+  "ListName": "Hardcover Nonfiction",
+  "DisplayName": "Hardcover Nonfiction",
+  "ListNameEncoded": "hardcover-nonfiction",
+  "OldestPublishedDate": "2008-06-08",
+  "NewestPublishedDate": "2024-03-17",
+  "Updated": "WEEKLY"
+ },
+ {
+  "ID": 5,
+  "ListName": "Trade Fiction Paperback",
+  "DisplayName": "Paperback Trade Fiction",
+  "ListNameEncoded": "trade-fiction-paperback",
+  "OldestPublishedDate": "2008-06-08",
+  "NewestPublishedDate": "2024-03-17",
+  "Updated": "WEEKLY"
+ },
+ {
+  "ID": 6,
+  "ListName": "Mass Market Paperback",
+  "DisplayName": "Paperback Mass-Market Fiction",
+  "ListNameEncoded": "mass-market-paperback",
+  "OldestPublishedDate": "2008-06-08",
+  "NewestPublishedDate": "2017-01-29",
+  "Updated": "WEEKLY"
+ },
+ {
+  "ID": 7,
+  "ListName": "Paperback Nonfiction",
+  "DisplayName": "Paperback Nonfiction",
+  "ListNameEncoded": "paperback-nonfiction",
+  "OldestPublishedDate": "2008-06-08",
+  "NewestPublishedDate": "2024-03-17",
+  "Updated": "WEEKLY"
+ },
+ {
+  "ID": 8,
+  "ListName": "E-Book Fiction",
+  "DisplayName": "E-Book Fiction",
+  "ListNameEncoded": "e-book-fiction",
+  "OldestPublishedDate": "2011-02-13",
+  "NewestPublishedDate": "2017-01-29",
+  "Updated": "WEEKLY"
+ },
+ {
+  "ID": 9,
+  "ListName": "E-Book Nonfiction",
+  "DisplayName": "E-Book Nonfiction",
+  "ListNameEncoded": "e-book-nonfiction",
+  "OldestPublishedDate": "2011-02-13",
+  "NewestPublishedDate": "2017-01-29",
+  "Updated": "WEEKLY"
+ },
+ {
+  "ID": 10,
+  "ListName": "Hardcover Advice",
+  "DisplayName": "Hardcover Advice \u0026 Misc.",
+  "ListNameEncoded": "hardcover-advice",
+  "OldestPublishedDate": "2008-06-08",
+  "NewestPublishedDate": "2013-04-21",
+  "Updated": "WEEKLY"
+ },
+ {
+  "ID": 11,
+  "ListName": "Paperback Advice",
+  "DisplayName": "Paperback Advice \u0026 Misc.",
+  "ListNameEncoded": "paperback-advice",
+  "OldestPublishedDate": "2008-06-08",
+  "NewestPublishedDate": "2013-04-21",
+  "Updated": "WEEKLY"
+ },
+ {
+  "ID": 12,
+  "ListName": "Advice How-To and Miscellaneous",
+  "DisplayName": "Advice, How-To \u0026 Miscellaneous",
+  "ListNameEncoded": "advice-how-to-and-miscellaneous",
+  "OldestPublishedDate": "2013-04-28",
+  "NewestPublishedDate": "2024-03-17",
+  "Updated": "WEEKLY"
+ },
+ {
+  "ID": 13,
+  "ListName": "Hardcover Graphic Books",
+  "DisplayName": "Hardcover Graphic Books",
+  "ListNameEncoded": "hardcover-graphic-books",
+  "OldestPublishedDate": "2009-03-15",
+  "NewestPublishedDate": "2017-01-29",
+  "Updated": "WEEKLY"
+ },
+ {
+  "ID": 14,
+  "ListName": "Paperback Graphic Books",
+  "DisplayName": "Paperback Graphic Books",
+  "ListNameEncoded": "paperback-graphic-books",
+  "OldestPublishedDate": "2009-03-15",
+  "NewestPublishedDate": "2017-01-29",
+  "Updated": "WEEKLY"
+ },
+ {
+  "ID": 15,
+  "ListName": "Manga",
+  "DisplayName": "Manga",
+  "ListNameEncoded": "manga",
+  "OldestPublishedDate": "2009-03-15",
+  "NewestPublishedDate": "2017-01-29",
+  "Updated": "WEEKLY"
+ },
+ {
+  "ID": 16,
+  "ListName": "Combined Print Fiction",
+  "DisplayName": "Combined Hardcover \u0026 Paperback Fiction",
+  "ListNameEncoded": "combined-print-fiction",
+  "OldestPublishedDate": "2011-02-13",
+  "NewestPublishedDate": "2013-05-12",
+  "Updated": "WEEKLY"
+ },
+ {
+  "ID": 17,
+  "ListName": "Combined Print Nonfiction",
+  "DisplayName": "Combined Hardcover \u0026 Paperback Nonfiction",
+  "ListNameEncoded": "combined-print-nonfiction",
+  "OldestPublishedDate": "2011-02-13",
+  "NewestPublishedDate": "2013-05-12",
+  "Updated": "WEEKLY"
+ },
+ {
+  "ID": 18,
+  "ListName": "Chapter Books",
+  "DisplayName": "Children’s Chapter Books",
+  "ListNameEncoded": "chapter-books",
+  "OldestPublishedDate": "2008-06-08",
+  "NewestPublishedDate": "2012-12-09",
+  "Updated": "WEEKLY"
+ },
+ {
+  "ID": 19,
+  "ListName": "Childrens Middle Grade",
+  "DisplayName": "Children’s Middle Grade",
+  "ListNameEncoded": "childrens-middle-grade",
+  "OldestPublishedDate": "2012-12-16",
+  "NewestPublishedDate": "2015-08-23",
+  "Updated": "WEEKLY"
+ },
+ {
+  "ID": 20,
+  "ListName": "Childrens Middle Grade E-Book",
+  "DisplayName": "Children’s Middle Grade E-Book",
+  "ListNameEncoded": "childrens-middle-grade-e-book",
+  "OldestPublishedDate": "2015-08-30",
+  "NewestPublishedDate": "2017-01-29",
+  "Updated": "WEEKLY"
+ },
+ {
+  "ID": 21,
+  "ListName": "Childrens Middle Grade Hardcover",
+  "DisplayName": "Children’s Middle Grade Hardcover",
+  "ListNameEncoded": "childrens-middle-grade-hardcover",
+  "OldestPublishedDate": "2015-08-30",
+  "NewestPublishedDate": "2024-03-17",
+  "Updated": "WEEKLY"
+ },
+ {
+  "ID": 22,
+  "ListName": "Childrens Middle Grade Paperback",
+  "DisplayName": "Children’s Middle Grade Paperback",
+  "ListNameEncoded": "childrens-middle-grade-paperback",
+  "OldestPublishedDate": "2015-08-30",
+  "NewestPublishedDate": "2017-01-29",
+  "Updated": "WEEKLY"
+ },
+ {
+  "ID": 23,
+  "ListName": "Paperback Books",
+  "DisplayName": "Children’s Paperback Books",
+  "ListNameEncoded": "paperback-books",
+  "OldestPublishedDate": "2008-06-08",
+  "NewestPublishedDate": "2012-12-09",
+  "Updated": "WEEKLY"
+ },
+ {
+  "ID": 24,
+  "ListName": "Picture Books",
+  "DisplayName": "Children’s Picture Books",
+  "ListNameEncoded": "picture-books",
+  "OldestPublishedDate": "2008-06-08",
+  "NewestPublishedDate": "2024-03-17",
+  "Updated": "WEEKLY"
+ },
+ {
+  "ID": 25,
+  "ListName": "Series Books",
+  "DisplayName": "Children’s Series",
+  "ListNameEncoded": "series-books",
+  "OldestPublishedDate": "2008-06-08",
+  "NewestPublishedDate": "2024-03-17",
+  "Updated": "WEEKLY"
+ },
+ {
+  "ID": 26,
+  "ListName": "Young Adult",
+  "DisplayName": "Young Adult",
+  "ListNameEncoded": "young-adult",
+  "OldestPublishedDate": "2012-12-16",
+  "NewestPublishedDate": "2015-08-23",
+  "Updated": "WEEKLY"
+ },
+ {
+  "ID": 27,
+  "ListName": "Young Adult E-Book",
+  "DisplayName": "Young Adult E-Book",
+  "ListNameEncoded": "young-adult-e-book",
+  "OldestPublishedDate": "2015-08-30",
+  "NewestPublishedDate": "2017-01-29",
+  "Updated": "WEEKLY"
+ },
+ {
+  "ID": 28,
+  "ListName": "Young Adult Hardcover",
+  "DisplayName": "Young Adult Hardcover",
+  "ListNameEncoded": "young-adult-hardcover",
+  "OldestPublishedDate": "2015-08-30",
+  "NewestPublishedDate": "2024-03-17",
+  "Updated": "WEEKLY"
+ },
+ {
+  "ID": 29,
+  "ListName": "Young Adult Paperback",
+  "DisplayName": "Young Adult Paperback",
+  "ListNameEncoded": "young-adult-paperback",
+  "OldestPublishedDate": "2015-08-30",
+  "NewestPublishedDate": "2017-01-29",
+  "Updated": "WEEKLY"
+ },
+ {
+  "ID": 30,
+  "ListName": "Animals",
+  "DisplayName": "Animals",
+  "ListNameEncoded": "animals",
+  "OldestPublishedDate": "2014-09-07",
+  "NewestPublishedDate": "2017-01-15",
+  "Updated": "MONTHLY"
+ },
+ {
+  "ID": 31,
+  "ListName": "Audio Fiction",
+  "DisplayName": "Audio Fiction",
+  "ListNameEncoded": "audio-fiction",
+  "OldestPublishedDate": "2018-03-11",
+  "NewestPublishedDate": "2024-03-17",
+  "Updated": "MONTHLY"
+ },
+ {
+  "ID": 32,
+  "ListName": "Audio Nonfiction",
+  "DisplayName": "Audio Nonfiction",
+  "ListNameEncoded": "audio-nonfiction",
+  "OldestPublishedDate": "2018-03-11",
+  "NewestPublishedDate": "2024-03-17",
+  "Updated": "MONTHLY"
+ },
+ {
+  "ID": 33,
+  "ListName": "Business Books",
+  "DisplayName": "Business",
+  "ListNameEncoded": "business-books",
+  "OldestPublishedDate": "2013-11-03",
+  "NewestPublishedDate": "2024-03-17",
+  "Updated": "MONTHLY"
+ },
+ {
+  "ID": 34,
+  "ListName": "Celebrities",
+  "DisplayName": "Celebrities",
+  "ListNameEncoded": "celebrities",
+  "OldestPublishedDate": "2014-09-07",
+  "NewestPublishedDate": "2017-01-15",
+  "Updated": "MONTHLY"
+ },
+ {
+  "ID": 35,
+  "ListName": "Crime and Punishment",
+  "DisplayName": "Crime and Punishment",
+  "ListNameEncoded": "crime-and-punishment",
+  "OldestPublishedDate": "2014-10-12",
+  "NewestPublishedDate": "2017-01-15",
+  "Updated": "MONTHLY"
+ },
+ {
+  "ID": 36,
+  "ListName": "Culture",
+  "DisplayName": "Culture",
+  "ListNameEncoded": "culture",
+  "OldestPublishedDate": "2014-10-12",
+  "NewestPublishedDate": "2017-01-15",
+  "Updated": "MONTHLY"
+ },
+ {
+  "ID": 37,
+  "ListName": "Education",
+  "DisplayName": "Education",
+  "ListNameEncoded": "education",
+  "OldestPublishedDate": "2014-10-12",
+  "NewestPublishedDate": "2017-01-15",
+  "Updated": "MONTHLY"
+ },
+ {
+  "ID": 38,
+  "ListName": "Espionage",
+  "DisplayName": "Espionage",
+  "ListNameEncoded": "espionage",
+  "OldestPublishedDate": "2014-12-14",
+  "NewestPublishedDate": "2017-01-15",
+  "Updated": "MONTHLY"
+ },
+ {
+  "ID": 39,
+  "ListName": "Expeditions Disasters and Adventures",
+  "DisplayName": "Expeditions",
+  "ListNameEncoded": "expeditions-disasters-and-adventures",
+  "OldestPublishedDate": "2014-12-14",
+  "NewestPublishedDate": "2017-01-15",
+  "Updated": "MONTHLY"
+ },
+ {
+  "ID": 40,
+  "ListName": "Fashion Manners and Customs",
+  "DisplayName": "Fashion, Manners and Customs",
+  "ListNameEncoded": "fashion-manners-and-customs",
+  "OldestPublishedDate": "2014-10-12",
+  "NewestPublishedDate": "2017-01-15",
+  "Updated": "MONTHLY"
+ },
+ {
+  "ID": 41,
+  "ListName": "Food and Fitness",
+  "DisplayName": "Food and Diet",
+  "ListNameEncoded": "food-and-fitness",
+  "OldestPublishedDate": "2013-09-01",
+  "NewestPublishedDate": "2017-01-15",
+  "Updated": "MONTHLY"
+ },
+ {
+  "ID": 42,
+  "ListName": "Games and Activities",
+  "DisplayName": "Games and Activities",
+  "ListNameEncoded": "games-and-activities",
+  "OldestPublishedDate": "2014-10-12",
+  "NewestPublishedDate": "2017-01-15",
+  "Updated": "MONTHLY"
+ },
+ {
+  "ID": 43,
+  "ListName": "Graphic Books and Manga",
+  "DisplayName": "Graphic Books and Manga",
+  "ListNameEncoded": "graphic-books-and-manga",
+  "OldestPublishedDate": "2019-10-13",
+  "NewestPublishedDate": "2024-03-17",
+  "Updated": "MONTHLY"
+ },
+ {
+  "ID": 44,
+  "ListName": "Hardcover Business Books",
+  "DisplayName": "Hardcover Business Books",
+  "ListNameEncoded": "hardcover-business-books",
+  "OldestPublishedDate": "2011-07-03",
+  "NewestPublishedDate": "2013-10-13",
+  "Updated": "MONTHLY"
+ },
+ {
+  "ID": 45,
+  "ListName": "Health",
+  "DisplayName": "Health",
+  "ListNameEncoded": "health",
+  "OldestPublishedDate": "2014-10-12",
+  "NewestPublishedDate": "2017-01-15",
+  "Updated": "MONTHLY"
+ },
+ {
+  "ID": 46,
+  "ListName": "Humor",
+  "DisplayName": "Humor",
+  "ListNameEncoded": "humor",
+  "OldestPublishedDate": "2014-09-07",
+  "NewestPublishedDate": "2017-01-15",
+  "Updated": "MONTHLY"
+ },
+ {
+  "ID": 47,
+  "ListName": "Indigenous Americans",
+  "DisplayName": "Indigenous Americans",
+  "ListNameEncoded": "indigenous-americans",
+  "OldestPublishedDate": "2014-12-14",
+  "NewestPublishedDate": "2016-01-10",
+  "Updated": "MONTHLY"
+ },
+ {
+  "ID": 48,
+  "ListName": "Relationships",
+  "DisplayName": "Love and Relationships",
+  "ListNameEncoded": "relationships",
+  "OldestPublishedDate": "2014-09-07",
+  "NewestPublishedDate": "2017-01-15",
+  "Updated": "MONTHLY"
+ },
+ {
+  "ID": 49,
+  "ListName": "Mass Market Monthly",
+  "DisplayName": "Mass Market",
+  "ListNameEncoded": "mass-market-monthly",
+  "OldestPublishedDate": "2019-10-13",
+  "NewestPublishedDate": "2024-03-17",
+  "Updated": "MONTHLY"
+ },
+ {
+  "ID": 50,
+  "ListName": "Middle Grade Paperback Monthly",
+  "DisplayName": "Middle Grade Paperback",
+  "ListNameEncoded": "middle-grade-paperback-monthly",
+  "OldestPublishedDate": "2019-10-13",
+  "NewestPublishedDate": "2024-03-17",
+  "Updated": "MONTHLY"
+ },
+ {
+  "ID": 51,
+  "ListName": "Paperback Business Books",
+  "DisplayName": "Paperback Business Books",
+  "ListNameEncoded": "paperback-business-books",
+  "OldestPublishedDate": "2011-07-03",
+  "NewestPublishedDate": "2013-10-13",
+  "Updated": "MONTHLY"
+ },
+ {
+  "ID": 52,
+  "ListName": "Family",
+  "DisplayName": "Parenthood and Family",
+  "ListNameEncoded": "family",
+  "OldestPublishedDate": "2014-09-07",
+  "NewestPublishedDate": "2017-01-15",
+  "Updated": "MONTHLY"
+ },
+ {
+  "ID": 53,
+  "ListName": "Hardcover Political Books",
+  "DisplayName": "Politics and American History",
+  "ListNameEncoded": "hardcover-political-books",
+  "OldestPublishedDate": "2011-07-03",
+  "NewestPublishedDate": "2017-01-15",
+  "Updated": "MONTHLY"
+ },
+ {
+  "ID": 54,
+  "ListName": "Race and Civil Rights",
+  "DisplayName": "Race and Civil Rights",
+  "ListNameEncoded": "race-and-civil-rights",
+  "OldestPublishedDate": "2014-12-14",
+  "NewestPublishedDate": "2017-01-15",
+  "Updated": "MONTHLY"
+ },
+ {
+  "ID": 55,
+  "ListName": "Religion Spirituality and Faith",
+  "DisplayName": "Religion, Spirituality and Faith",
+  "ListNameEncoded": "religion-spirituality-and-faith",
+  "OldestPublishedDate": "2014-09-07",
+  "NewestPublishedDate": "2017-01-15",
+  "Updated": "MONTHLY"
+ },
+ {
+  "ID": 56,
+  "ListName": "Science",
+  "DisplayName": "Science",
+  "ListNameEncoded": "science",
+  "OldestPublishedDate": "2013-04-14",
+  "NewestPublishedDate": "2019-09-15",
+  "Updated": "MONTHLY"
+ },
+ {
+  "ID": 57,
+  "ListName": "Sports",
+  "DisplayName": "Sports and Fitness",
+  "ListNameEncoded": "sports",
+  "OldestPublishedDate": "2014-03-02",
+  "NewestPublishedDate": "2019-09-15",
+  "Updated": "MONTHLY"
+ },
+ {
+  "ID": 58,
+  "ListName": "Travel",
+  "DisplayName": "Travel",
+  "ListNameEncoded": "travel",
+  "OldestPublishedDate": "2014-09-07",
+  "NewestPublishedDate": "2017-01-15",
+  "Updated": "MONTHLY"
+ },
+ {
+  "ID": 59,
+  "ListName": "Young Adult Paperback Monthly",
+  "DisplayName": "Young Adult Paperback",
+  "ListNameEncoded": "young-adult-paperback-monthly",
+  "OldestPublishedDate": "2019-10-13",
+  "NewestPublishedDate": "2024-03-17",
+  "Updated": "MONTHLY"
+ }
+]

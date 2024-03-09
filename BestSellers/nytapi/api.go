@@ -6,11 +6,13 @@ import (
 	"io"
 	"log"
 	"net/http"
+
+	"github.com/melissab1238/GO-NYT/BestSellers/config"
 )
 
 // helper function
-func getJsonFromUrl(url string, api_key string) ([]byte, error) {
-	url = fmt.Sprintf("%s?api-key=%s", url, api_key)
+func getJsonFromUrl(url string) ([]byte, error) {
+	url = fmt.Sprintf("%s?api-key=%s", url, config.APIKEY)
 	resp, err := http.Get(url)
 	if err != nil {
 		log.Fatal(err)
@@ -24,9 +26,9 @@ func getJsonFromUrl(url string, api_key string) ([]byte, error) {
 	return result, nil
 }
 
-func FetchBookLists(apiKey *string) ([]BookList, error) {
+func FetchBookLists() ([]BookList, error) {
 	url := "https://api.nytimes.com/svc/books/v3/lists/names.json"
-	jsonData, err := getJsonFromUrl(url, *apiKey)
+	jsonData, err := getJsonFromUrl(url)
 	if err != nil {
 		return nil, err
 	}
@@ -37,7 +39,6 @@ func FetchBookLists(apiKey *string) ([]BookList, error) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println("Number of book lists:", bookListFromAPI.NumResults)
 
 	// Add IDs to each booklist result
 	var bookLists []BookList
@@ -54,9 +55,11 @@ func FetchBookLists(apiKey *string) ([]BookList, error) {
 	return bookLists, nil
 }
 
-func GetBooks(apiKey *string, bookListID int) ([]Book, error) {
+func GetBooks(bookListID int) ([]Book, error) {
+	// currently hardcoded to hardcover-fiction
+	// bookListID is not being used
 	url := "https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json"
-	jsonData, err := getJsonFromUrl(url, *apiKey)
+	jsonData, err := getJsonFromUrl(url)
 	if err != nil {
 		log.Fatal(nil, err)
 	}

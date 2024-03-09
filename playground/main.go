@@ -1,60 +1,54 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
-	"os"
-	"reflect"
-	"time"
+	"strings"
+
+	"github.com/spf13/cobra"
 )
 
 func main() {
-	firstName, lastName, age := "Bob", "Sal", 100
-	const publisher = "Penguin"
-	fmt.Println(publisher)
-	_, _, _ = firstName, lastName, age // compiler is now happy
+	var echoTimes int
 
-	address := "123 Main St\nMinneapolis\nMinnesota, USA\n12345"
-	_ = address
-	fmt.Println(address)
-	fmt.Printf("number of characters in address: %d\n", len(address))
-
-	start := time.Now()
-	fmt.Println(start)
-	fmt.Printf("type of start: %s\n", reflect.TypeOf((start)))
-
-	// CLI practice
-	type Person struct {
-		FirstName string
-		LastName  string
-		Age       int
-		FavColor  string
-	}
-	var person Person
-	// whats your name?
-	fmt.Println("What's your first name?")
-	fmt.Scanln(&person.FirstName)
-	fmt.Println("What's your last name?")
-	fmt.Scanln(&person.LastName)
-	// whats your age?
-	fmt.Println("What's your age?")
-	fmt.Scanln(&person.Age)
-	// whats your favorite color?
-	fmt.Println("What's your favorite color?")
-	fmt.Scanln(&person.FavColor)
-	// save to struct, then save in json file
-
-	// Marshall the struct into JSON
-	jsonData, err := json.Marshal(person)
-	if err != nil {
-		fmt.Println("Error marshaling data:", err)
-		return
+	var cmdPrint = &cobra.Command{
+		Use:   "print [string to print]",
+		Short: "Print anything to the screen",
+		Long: `print is for printing anything back to the screen.
+For many years people have printed back to the screen.`,
+		Args: cobra.MinimumNArgs(1),
+		Run: func(cmd *cobra.Command, args []string) {
+			fmt.Println("Print: " + strings.Join(args, " "))
+		},
 	}
 
-	// Write the JSON data to a file
-	err = os.WriteFile("person.json", jsonData, 0644) // 0644 means read and write for owner and read for everyone else
-	if err != nil {
-		fmt.Println("Error writing file:", err)
-		return
+	var cmdEcho = &cobra.Command{
+		Use:   "echo [string to echo]",
+		Short: "Echo anything to the screen",
+		Long: `echo is for echoing anything back.
+Echo works a lot like print, except it has a child command.`,
+		Args: cobra.MinimumNArgs(1),
+		Run: func(cmd *cobra.Command, args []string) {
+			fmt.Println("Print: " + strings.Join(args, " "))
+		},
 	}
+
+	var cmdTimes = &cobra.Command{
+		Use:   "times [# times] [string to echo]",
+		Short: "Echo anything to the screen more times",
+		Long: `echo things multiple times back to the user by providing
+a count and a string.`,
+		Args: cobra.MinimumNArgs(1),
+		Run: func(cmd *cobra.Command, args []string) {
+			for i := 0; i < echoTimes; i++ {
+				fmt.Println("Echo: " + strings.Join(args, " "))
+			}
+		},
+	}
+
+	cmdTimes.Flags().IntVarP(&echoTimes, "times", "t", 1, "times to echo the input")
+
+	var rootCmd = &cobra.Command{Use: "app"}
+	rootCmd.AddCommand(cmdPrint, cmdEcho)
+	cmdEcho.AddCommand(cmdTimes)
+	rootCmd.Execute()
 }

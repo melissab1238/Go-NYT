@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 
+	"github.com/melissab1238/GO-NYT/BestSellers/data"
 	"github.com/melissab1238/GO-NYT/BestSellers/nytapi"
 )
 
@@ -13,18 +14,11 @@ type Command struct {
 	Execute     func()
 }
 
-var APIKEY *string
-
-func SetupCLI(apiKey *string) {
-	APIKEY = apiKey
-	// TODO some more stuff
-}
-
 var Commands = map[string]Command{
 	"list": {
 		Name:        "list",
 		Description: "List all best-selling lists",
-		Execute:     displayBookLists,
+		Execute:     DisplayBookLists,
 	},
 	"search": {
 		Name:        "search",
@@ -38,14 +32,21 @@ var Commands = map[string]Command{
 	},
 }
 
-func displayBookLists() {
-	// Fetch book lists
-	bookLists, err := nytapi.FetchBookLists(APIKEY)
-	if err != nil {
-		log.Fatal(err)
-	}
+// Fetch book lists from api and print booklists
+func DisplayBookLists() {
+	var booklists []nytapi.BookList
+	booklists = data.GetBookLists()
+	if booklists == nil {
 
-	formatBookLists(bookLists)
+		var err error
+		booklists, err = nytapi.FetchBookLists()
+		if err != nil {
+			log.Fatal(err)
+		}
+		data.SetBooklists(booklists)
+	}
+	// todo - add booklists to cache
+	formatBookLists(booklists)
 }
 
 func searchBooks() {
@@ -54,7 +55,7 @@ func searchBooks() {
 
 func getHardcoverBooks() {
 	// Get Hardcover books
-	books, err := nytapi.GetBooks(APIKEY, 2)
+	books, err := nytapi.GetBooks(2) // 2 is the index of hardcover books
 	if err != nil {
 		log.Fatal(err)
 	}
