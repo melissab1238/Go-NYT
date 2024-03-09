@@ -20,7 +20,7 @@ func main() {
 	apiKey := os.Getenv("API_KEY")
 
 	// Initialize the CLI
-	cli.SetupCLI(apiKey)
+	cli.SetupCLI(&apiKey)
 
 	// Start the CLI
 	reader := bufio.NewReader(os.Stdin)

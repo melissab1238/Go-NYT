@@ -13,9 +13,9 @@ type Command struct {
 	Execute     func()
 }
 
-var APIKEY string
+var APIKEY *string
 
-func SetupCLI(apiKey string) {
+func SetupCLI(apiKey *string) {
 	APIKEY = apiKey
 	// TODO some more stuff
 }

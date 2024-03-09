@@ -24,11 +24,11 @@ func getJsonFromUrl(url string, api_key string) ([]byte, error) {
 	return result, nil
 }
 
-func FetchBookLists(apiKey string) ([]BookList, error) {
+func FetchBookLists(apiKey *string) ([]BookList, error) {
 	url := "https://api.nytimes.com/svc/books/v3/lists/names.json"
-	jsonData, err := getJsonFromUrl(url, apiKey)
+	jsonData, err := getJsonFromUrl(url, *apiKey)
 	if err != nil {
-	return nil, err
+		return nil, err
 	}
 
 	// Assuming jsonData contains the JSON data as a byte slice
@@ -54,9 +54,9 @@ func FetchBookLists(apiKey string) ([]BookList, error) {
 	return bookLists, nil
 }
 
-func GetBooks(apiKey string, bookListID int) ([]Book, error) {
+func GetBooks(apiKey *string, bookListID int) ([]Book, error) {
 	url := "https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json"
-	jsonData, err := getJsonFromUrl(url, apiKey)
+	jsonData, err := getJsonFromUrl(url, *apiKey)
 	if err != nil {
 		log.Fatal(nil, err)
 	}
