@@ -1,10 +1,11 @@
-/*
-Copyright © 2024 NAME HERE <EMAIL ADDRESS>
-*/
 package cmd
 
 import (
-	"github.com/melissab1238/GO-NYT/BestSellers/cli"
+	"fmt"
+	"log"
+
+	"github.com/melissab1238/GO-NYT/BestSellers/data"
+	"github.com/melissab1238/GO-NYT/BestSellers/nytapi"
 	"github.com/spf13/cobra"
 )
 
@@ -14,11 +15,31 @@ var listsCmd = &cobra.Command{
 	Short: "Get all booklists from NYT",
 	Long:  `All of the booklists offered by the NYT Bestsellers API`,
 	Run: func(cmd *cobra.Command, args []string) {
-		cli.DisplayBookLists()
+		GetBookLists()
 	},
 }
 
 func init() {
 	rootCmd.AddCommand(listsCmd)
 
+}
+
+func GetBookLists() []nytapi.BookList {
+	var booklists []nytapi.BookList
+	booklists = data.GetBookLists()
+	if booklists == nil {
+		var err error
+		booklists, err = nytapi.FetchBookLists()
+		if err != nil {
+			log.Fatal(err)
+		}
+		data.SetBooklists(booklists)
+	}
+	return booklists
+}
+
+func PrintBooklistNames(bookLists []nytapi.BookList) {
+	for _, bookList := range bookLists {
+		fmt.Printf("%d %s\n", bookList.ID, bookList.ListName)
+	}
 }

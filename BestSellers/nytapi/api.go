@@ -1,11 +1,13 @@
 package nytapi
 
 import (
+	"encoding/base64"
 	"encoding/json"
 	"fmt"
 	"io"
 	"log"
 	"net/http"
+	"strings"
 
 	"github.com/melissab1238/GO-NYT/BestSellers/config"
 )
@@ -54,11 +56,16 @@ func FetchBookLists() ([]BookList, error) {
 	}
 	return bookLists, nil
 }
+func EncodeStringBase64(s string) string {
+	return base64.URLEncoding.EncodeToString([]byte(s))
+}
 
-func GetBooks(bookListID int) ([]Book, error) {
-	// currently hardcoded to hardcover-fiction
+func GetBestSellersByDate(date string, listName string) ([]Book, error) {
+	// Encode the listName to ensure it's safe for inclusion in a URL
+	encodedListName := strings.ReplaceAll(listName, " ", "%20")
+
 	// bookListID is not being used
-	url := "https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json"
+	url := fmt.Sprintf("https://api.nytimes.com/svc/books/v3/lists/%s/%s.json", date, encodedListName)
 	jsonData, err := getJsonFromUrl(url)
 	if err != nil {
 		log.Fatal(nil, err)
@@ -69,12 +76,10 @@ func GetBooks(bookListID int) ([]Book, error) {
 	if err != nil {
 		log.Fatal(nil, err)
 	}
-	// Access known status field
-	status := response.Status
-	fmt.Println("status:", status)
-	// Access the number of books in the list
-	numBooks := len(response.Results.Books)
-	fmt.Println("Number of books in the list:", numBooks)
+
+	if response.Status != "OK" {
+		log.Fatal(nil, `Response status is NOT "OK`)
+	}
 
 	return response.Results.Books, nil
 }

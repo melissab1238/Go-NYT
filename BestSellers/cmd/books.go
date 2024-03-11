@@ -1,7 +1,3 @@
-/*
-Copyright © 2024 NAME HERE <EMAIL ADDRESS>
-
-*/
 package cmd
 
 import (
@@ -13,7 +9,7 @@ import (
 // booksCmd represents the books command
 var booksCmd = &cobra.Command{
 	Use:   "books",
-	Short: "A brief description of your command",
+	Short: "not yet implemented TODO",
 	Long: `A longer description that spans multiple lines and likely contains examples
 and usage of using your command. For example:
 

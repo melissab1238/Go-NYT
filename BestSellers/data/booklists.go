@@ -2,7 +2,6 @@ package data
 
 import (
 	"encoding/json"
-	"fmt"
 	"io"
 	"log"
 	"os"
@@ -39,13 +38,10 @@ func GetBookLists() []nytapi.BookList {
 	byteValue, _ := io.ReadAll(jsonFile)
 	json.Unmarshal(byteValue, &booklists)
 	return booklists
-
 }
 
 func SetBooklists(bl []nytapi.BookList) {
-	fmt.Println("in setbooklist")
 	booklists = bl
-
 	saveToJSON(booklists)
 }
 
