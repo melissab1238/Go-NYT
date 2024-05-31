@@ -7,6 +7,7 @@ import (
 	"strings"
 
 	"github.com/melissab1238/GO-NYT/BestSellers/nytapi"
+	"github.com/sergi/go-diff/diffmatchpatch"
 	"github.com/spf13/cobra"
 )
 
@@ -41,23 +42,60 @@ var searchCmd = &cobra.Command{
 }
 
 func searchBooksByKeyWord(keyword string) []nytapi.Book {
-	var books []nytapi.Book
-
 	// Fetch all books
 	fetchedBooks, err := FetchAllBooks()
 	if err != nil {
 		log.Fatalf("Failed to fetch books: %v", err)
 	}
 
-	fmt.Printf("Searching for keyword: %s\n", keyword)
-	// Filter books based on the keyword
+	// Implemneting fuzzy matching
+	var matchedBooks []nytapi.Book
+
+	dmp := diffmatchpatch.New()
+
+	// Iterate over all books
 	for _, book := range fetchedBooks {
-		if strings.Contains(strings.ToLower(book.Title), strings.ToLower(keyword)) {
-			books = append(books, book)
+		// Normalize the title and keyword to lower case
+		normalizedTitle := strings.ToLower(book.Title)
+		normalizedKeyword := strings.ToLower(keyword)
+
+		// Perform fuzzy matching
+		diffs := dmp.DiffMain(normalizedTitle, normalizedKeyword, false)
+
+		// Calculate the similarity score
+		similarityScore := calculateSimilarity(diffs)
+
+		// fmt.Printf("Similarity score for '%s': %.2f\n", book.Title, similarityScore)
+
+		// Define a threshold for considering a match
+		threshold := 0.5 // Adjust based on your needs
+
+		// If the similarity score exceeds the threshold, consider it a match
+		if similarityScore >= threshold {
+			matchedBooks = append(matchedBooks, book)
+		}
+	}
+	return matchedBooks
+
+}
+
+// Helper function to calculate similarity score from diffs
+func calculateSimilarity(diffs []diffmatchpatch.Diff) float64 {
+	totalLength := 0
+	matchLength := 0
+
+	for _, diff := range diffs {
+		totalLength += len(diff.Text)
+		if diff.Type == diffmatchpatch.DiffInsert || diff.Type == diffmatchpatch.DiffEqual {
+			matchLength += len(diff.Text)
 		}
 	}
 
-	return books
+	if totalLength == 0 {
+		return 0
+	}
+
+	return float64(matchLength) / float64(totalLength)
 }
 
 func FetchAllBooks() ([]nytapi.Book, error) {
