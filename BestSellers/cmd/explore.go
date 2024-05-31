@@ -14,11 +14,11 @@ import (
 
 // dateCmd represents the date command
 var searchCmd = &cobra.Command{
-	Use:   "listSearch",
-	Short: "Search books in a booklist",
-	Long:  `Search books in a booklist`,
+	Use:   "explore",
+	Short: "Explore the books",
+	Long:  `Explore the books`,
 	Run: func(cmd *cobra.Command, args []string) {
-		listSearch()
+		explore()
 	},
 }
 
@@ -140,7 +140,7 @@ func promptGetBookTitle(pc promptContent, books []nytapi.Book) string {
 	return bookTitle
 }
 
-func listSearch() {
+func explore() {
 	booklistPromptContent := promptContent{
 		"Please provide a booklist.",
 		"What booklist do you want to search from?",
