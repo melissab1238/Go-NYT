@@ -12,8 +12,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// dateCmd represents the date command
-var searchCmd = &cobra.Command{
+var exploreCmd = &cobra.Command{
 	Use:   "explore",
 	Short: "Explore the books",
 	Long:  `Explore the books`,
@@ -23,7 +22,7 @@ var searchCmd = &cobra.Command{
 }
 
 func init() {
-	rootCmd.AddCommand(searchCmd)
+	rootCmd.AddCommand(exploreCmd)
 
 	// Cobra supports Persistent Flags which will work for this command
 	// and all subcommands, e.g.:

@@ -40,11 +40,13 @@ func GetBookLists() []nytapi.BookList {
 	return booklists
 }
 
+// Not yet used
 func SetBooklists(bl []nytapi.BookList) {
 	booklists = bl
 	saveToJSON(booklists)
 }
 
+// Not yet used
 func saveToJSON(bl []nytapi.BookList) {
 	jsonData, err := json.MarshalIndent(bl, "", " ")
 	if err != nil {
