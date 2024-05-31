@@ -1,11 +1,13 @@
 package cmd
 
 import (
-	"fmt"
 	"log"
+	"os"
+	"strconv"
 
 	"github.com/melissab1238/GO-NYT/BestSellers/data"
 	"github.com/melissab1238/GO-NYT/BestSellers/nytapi"
+	"github.com/olekukonko/tablewriter"
 	"github.com/spf13/cobra"
 )
 
@@ -15,7 +17,8 @@ var listsCmd = &cobra.Command{
 	Short: "Get all booklists from NYT",
 	Long:  `All of the booklists offered by the NYT Bestsellers API`,
 	Run: func(cmd *cobra.Command, args []string) {
-		GetBookLists()
+		booklists := GetBookLists()
+		PrintBooklistNames(booklists)
 	},
 }
 
@@ -39,7 +42,25 @@ func GetBookLists() []nytapi.BookList {
 }
 
 func PrintBooklistNames(bookLists []nytapi.BookList) {
+
+	// Create a new tablewriter
+	table := tablewriter.NewWriter(os.Stdout)
+
+	// Set table headers
+	table.SetHeader([]string{"ID", "List Name", "Oldest Pub. Date", "Newest Pub. Data"})
+
+	// Convert bookLists to the required data format
+	data := [][]string{}
 	for _, bookList := range bookLists {
-		fmt.Printf("%d %s\n", bookList.ID, bookList.ListName)
+		row := []string{strconv.Itoa(bookList.ID), bookList.ListName, bookList.OldestPublishedDate, bookList.NewestPublishedDate}
+		data = append(data, row)
 	}
+
+	// Append data rows
+	for _, v := range data {
+		table.Append(v)
+	}
+
+	// Render the table
+	table.Render()
 }
